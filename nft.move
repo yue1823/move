@@ -66,7 +66,7 @@ module mynft::mynft{
         transfer_ref: option::Option<object::TransferRef>
     }
 
-    #[test(caller=@0x1)]
+
     fun init_module(caller:&signer){
 
         let (resource_signer, resource_cap) = account::create_resource_account(
@@ -90,30 +90,10 @@ module mynft::mynft{
         let mutator_ref = aptos_token_objects::collection::generate_mutator_ref(&collection);
         move_to(&collection_signer,CollectionRefsStore{s:mutator_ref});
     }
-    //#[test(creator=@0x1)]
-    // #[event]
-    // public fun create_collection1(creator:&signer){
-    //     let max_supply = 1000;
-    //     let des:String = utf8(b"test nft");
-    //     let name:String =utf8(b"nft");
-    //     let web_Addr :String = utf8(b"https://pot-124.4everland.store/IMG_0714.JPG");
-    //
-    //     let collection=collection::create_fixed_collection(
-    //         creator,
-    //         des,
-    //         max_supply,
-    //         name,
-    //         option::none(),
-    //         web_Addr
-    //     );
-    //     let object_signer = object::generate_signer(&collection );
-    //     let mutator_ref = aptos_token_objects::collection::generate_mutator_ref(&collection);
-    //     move_to(&object_signer,CollectionRefsStore{s:mutator_ref});
-    //
-    //
-    // }
+    
     #[test(caller=@0x1)]
     fun test_mint(caller:&signer)acquires Resoucecap {
+        init_module(caller);
         let yee : String=utf8(b"1");
         mint(caller,yee);
     }
@@ -153,7 +133,7 @@ module mynft::mynft{
             object::object_from_constructor_ref<Token>(&token_cref),
             signer::address_of(caller),
         );
-        //let id =token::index<Token>(object::object_frcom_constructor_ref(&token_cref));
+      
     }
 
     entry fun burn(caller:&signer,object:Object<Content>)acquires Tokenstore,Content {
@@ -210,29 +190,7 @@ module mynft::mynft{
     public fun init_for_test(sender: &signer) {
         init_module(sender)
     }
-        // //#[test(caller=@0x1)]
-        // #[event]
-        // public  entry fun mint_token(caller:&signer) acquires Test_nft {
-        //         let collection_name=utf8(b"my collection");
-        //         let des = utf8(b"description");
-        //         let name =utf8(b"token name");
-        //         let url = utf8(b"https://pot-124.4everland.store/IMG_0714.JPG");
-        //          let token_constructer_ref = aptos_token_objects::token::create_named_token(
-        //                caller,
-        //                collection_name,
-        //                des,
-        //                name,
-        //                option::none(),
-        //                url
-        //         );
-        //         let mutator_ref = aptos_token_objects::token::generate_mutator_ref(&token_constructer_ref);
-        //         let object_signer = object::generate_signer(&token_constructer_ref);
-        //         let burn_ref = token::generate_burn_ref(&token_constructer_ref);
-        //         let transfer_ref = object::generate_transfer_ref(&token_constructer_ref);
-        //         let nft =Test_nft{burn_ref};
-        //         move_to(&object_signer,nft);
-        // }
-
+     
 
 
 
