@@ -79,7 +79,7 @@ module mynft::mynft{
         let name:String =utf8(b"nft");
         let web_Addr :String = utf8(b"https://pot-124.4everland.store/IMG_0714.JPG");
         let collection=collection::create_fixed_collection(
-            caller,
+            &resource_signer,
             des,
             max_supply,
             name,
