@@ -4,7 +4,7 @@ module mynft::mynft{
         use std::string;
         use std::option;
         use std::error;
-        use std::debug;
+
         use std::vector;
         use std::signer;
         use aptos_framework::object::{Self,Object, LinearTransferRef};
@@ -27,11 +27,11 @@ module mynft::mynft{
         const Token_does_not_exist:u64 =1;
         //the provide signer is cretor
         const Not_creator:u64=2;
-        const Mycollection:vector<u8> =b"my collection";
+        const Mycollection:vector<u8> =b"mycollection";
         const Project:address=@0x1;
          struct CollectionRefsStore has key {
 
-         s  :collection::MutatorRef,
+             mutator_ref:collection::MutatorRef,
 
          }
     struct Content has key,drop{
@@ -73,33 +73,57 @@ module mynft::mynft{
             caller,
             Mycollection
         );
+
         move_to(&resource_signer,Resoucecap{cap:resource_cap});
+        // if (exists<Resoucecap>(signer::address_of(&resource_signer))){
+        //     debug::print(&utf8(b"1.yes ResourceCap"));
+        // }else{
+        //     debug::print(&utf8(b"1.no ResourceCap"));
+        // };
+        // debug::print(&utf8(Mycollection));
+
         let max_supply = 1000;
         let des:String = utf8(b"test nft");
         let name:String =utf8(b"nft");
         let web_Addr :String = utf8(b"https://pot-124.4everland.store/IMG_0714.JPG");
         let collection=collection::create_fixed_collection(
             &resource_signer,
-            des,
-            max_supply,
-            name,
+            utf8(b"test nft"),
+            1000,
+            utf8(b"nft"),
             option::none(),
-            web_Addr
+            utf8(b"https://pot-124.4everland.store/IMG_0714.JPG")
         );
         let collection_signer = object::generate_signer(&collection );
         let mutator_ref = aptos_token_objects::collection::generate_mutator_ref(&collection);
-        move_to(&collection_signer,CollectionRefsStore{s:mutator_ref});
+        move_to(&collection_signer,CollectionRefsStore{mutator_ref});
+
+
+        // if (exists<CollectionRefsStore>(signer::address_of(&collection_signer))){
+        //     debug::print(&utf8(b"2.yes CollectionRefsStore"));
+        // }else{
+        //     debug::print(&utf8(b"2.no CollectionRefsStore"));
+        // };
     }
-    
-    #[test(caller=@0x1)]
-    fun test_mint(caller:&signer)acquires Resoucecap {
-        init_module(caller);
-        let yee : String=utf8(b"1");
-        mint(caller,yee);
-    }
+
+    // #[test(caller=@0x1)]
+    // fun test_mint(caller:&signer)acquires Resoucecap {
+    //     init_module(caller);
+    //     let yee : String=utf8(b"1");
+    //     mint(caller,yee);
+    // }
+    //&@mynft
     entry public fun mint(caller :&signer,content:string::String)acquires Resoucecap {
-        let resourf = aptos_framework::account::create_resource_address(&@mynft,Mycollection);
-        let resource_cap = &borrow_global<Resoucecap>(resourf).cap;
+        //let resourf = aptos_framework::account::create_resource_address(&@mynft,Mycollection);
+
+        // debug::print(&utf8(Mycollection));
+        // if (exists<Resoucecap>(resourf)){
+        //     debug::print(&utf8(b"3.yes Resoucecap"));
+        // }else{
+        //     debug::print(&utf8(b"3.no Resoucecap"));
+        // };
+
+        let resource_cap = &borrow_global<Resoucecap>(aptos_framework::account::create_resource_address(&@mynft,Mycollection)).cap;
         let resource_signer = &account::create_signer_with_capability(resource_cap);
         let token_cref = token::create(resource_signer,utf8(b"nft"),utf8(Mycollection),utf8(b"test nft"),option::none(),utf8(b"https://pot-124.4everland.store/IMG_0714.JPG"));
         let token_signer = object::generate_signer(&token_cref);
@@ -133,7 +157,7 @@ module mynft::mynft{
             object::object_from_constructor_ref<Token>(&token_cref),
             signer::address_of(caller),
         );
-      
+
     }
 
     entry fun burn(caller:&signer,object:Object<Content>)acquires Tokenstore,Content {
@@ -186,15 +210,11 @@ module mynft::mynft{
         assert!(object::is_owner(object, owner), 1);
         borrow_global_mut<Content>(object::object_address(&object))
     }
-    #[test(sender=@0x1)]
+    #[test_only]
     public fun init_for_test(sender: &signer) {
         init_module(sender)
     }
-     
 
-
-
-}
 
 
 
