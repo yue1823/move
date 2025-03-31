@@ -1,0 +1,20 @@
+[package]
+name = "aip118"
+version = "1.0.0"
+authors = ["yue"]
+
+[addresses]
+admin = "0x1234"
+Hybrid_Asset="0x923"
+[dev-addresses]
+
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-framework.git"
+rev = "mainnet"
+subdir = "aptos-framework"
+
+[dependencies.hybrid]
+local="./hybrid"
+
+[dev-dependencies]

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1f9e78cd-a212-473a-93a3-f26dd36baaea" name="更改" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Move Module" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MoveProjectSettingsService_1">
+    <option name="localAptosPath" value="/opt/homebrew/bin/aptos" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2v0ayF8iR4EDOGoEOhxCECkPOXP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Aptos.Test Hybrid_Asset.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.excludes",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Test Hybrid_Asset" type="AptosCommandConfiguration" factoryName="AnyCommand">
+      <option name="command" value="move test --filter Hybrid_Asset --skip-fetch-latest-git-deps" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs>
+        <env name="APTOS_DISABLE_TELEMETRY" value="true" />
+      </envs>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.59" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.59" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="1f9e78cd-a212-473a-93a3-f26dd36baaea" name="更改" comment="" />
+      <created>1743284702442</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743284702442</updated>
+      <workItem from="1743284703521" duration="19000" />
+      <workItem from="1743284737388" duration="217000" />
+      <workItem from="1743284957508" duration="274000" />
+      <workItem from="1743285234544" duration="50000" />
+      <workItem from="1743285286946" duration="53000" />
+      <workItem from="1743285341947" duration="62000" />
+      <workItem from="1743285410456" duration="81000" />
+      <workItem from="1743285495097" duration="26000" />
+      <workItem from="1743285525439" duration="54000" />
+      <workItem from="1743285582955" duration="54000" />
+      <workItem from="1743285641144" duration="28000" />
+      <workItem from="1743285672532" duration="24000" />
+      <workItem from="1743285717271" duration="72000" />
+      <workItem from="1743285802610" duration="6000" />
+      <workItem from="1743285817464" duration="94000" />
+      <workItem from="1743285914297" duration="36000" />
+      <workItem from="1743291414687" duration="775000" />
+      <workItem from="1743295001719" duration="4693000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
