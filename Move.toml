@@ -15,6 +15,6 @@ rev = "mainnet"
 subdir = "aptos-framework"
 
 [dependencies.hybrid]
-local="./hybrid"
+local="hybrid"
 
 [dev-dependencies]

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f9e78cd-a212-473a-93a3-f26dd36baaea" name="更改" comment="" />
+    <list default="true" id="1f9e78cd-a212-473a-93a3-f26dd36baaea" name="更改" comment="create" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,11 +94,35 @@
       <workItem from="1743285817464" duration="94000" />
       <workItem from="1743285914297" duration="36000" />
       <workItem from="1743291414687" duration="775000" />
-      <workItem from="1743295001719" duration="4693000" />
+      <workItem from="1743295001719" duration="5510000" />
     </task>
+    <task id="LOCAL-00001" summary="create">
+      <option name="closed" value="true" />
+      <created>1743410276758</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743410276758</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="create" />
+    <option name="LAST_COMMIT_MESSAGE" value="create" />
   </component>
 </project>
